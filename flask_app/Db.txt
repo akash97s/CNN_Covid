@@ -1,0 +1,28 @@
+
+DB:
+
+Open mysql
+
+CREATE DATABASE myFlaskApp;
+USE myFLaskApp;
+
+CREATE TABLE users(username VARCHAR(100) PRIMARY KEY, password VARCHAR(100)NOT NULL);
+
+
+
+
+FLASK:
+
+pip install flask-mysqldb
+pip install flask-WTF
+pip install passlib
+
+
+CNN:
+
+Tensorflow
+
+
+set FLASK_APP=predict_app.py
+flask run --host=0.0.0.0
+http://127.0.0.1:5000/static/predict.html
