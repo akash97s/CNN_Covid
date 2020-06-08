@@ -123,7 +123,8 @@ def logout():
 
 
 
-# ML model
+# ML model starts
+# CNN
 
 def get_model():
     global model
@@ -153,7 +154,8 @@ def predict(message):
     response = {
         'prediction': {
             'Covid': prediction[0][0],
-            'Normal': prediction[0][1]
+            'Normal': prediction[0][1],
+            'query': message['query']
         }
     }
     return jsonify(response)
@@ -177,6 +179,8 @@ def services():
             return null
         elif message['model'] == 'Model2':
             return null
+        else:
+            return flash('Pleae select a model', 'danger')
 
 
     return render_template('services.html')
